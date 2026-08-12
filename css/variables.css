@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS
+   Control Plane — Infrastructure aesthetic with cinematic scale
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── COLOR SYSTEM ──────────────────────────────────────────── */
+
+  /* Backgrounds */
+  --c-bg-deep: #0A0E17;
+  --c-bg-surface: #131825;
+  --c-bg-elevated: #1A2035;
+  --c-bg-hover: #1E2642;
+
+  /* Text */
+  --c-text-primary: #E2E8F0;
+  --c-text-secondary: #94A3B8;
+  --c-text-muted: #64748B;
+  --c-text-faint: #475569;
+
+  /* Accents */
+  --c-accent-green: #22D3A7;
+  --c-accent-cyan: #38BDF8;
+  --c-accent-amber: #F59E0B;
+
+  /* Borders */
+  --c-border: #1E293B;
+  --c-border-light: #2D3A4F;
+  --c-border-focus: #22D3A7;
+
+
+  /* ── TYPOGRAPHY ────────────────────────────────────────────── */
+
+  --f-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono: 'IBM Plex Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Type scale — ~1.25 modular ratio */
+  --fs-xs: 0.75rem;
+  /* 12px */
+  --fs-sm: 0.875rem;
+  /* 14px */
+  --fs-base: 1rem;
+  /* 16px */
+  --fs-lg: 1.125rem;
+  /* 18px */
+  --fs-xl: 1.25rem;
+  /* 20px */
+  --fs-2xl: 1.5rem;
+  /* 24px */
+  --fs-3xl: 2rem;
+  /* 32px */
+  --fs-4xl: 2.5rem;
+  /* 40px */
+  --fs-5xl: 3.5rem;
+  /* 56px */
+  --fs-6xl: 5rem;
+  /* 80px */
+  --fs-hero: clamp(2.25rem, 6.5vw, 5.5rem);
+  --fs-section: clamp(1.75rem, 4vw, 3rem);
+
+  /* Line heights */
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+  /* Letter spacing */
+  --ls-tight: -0.02em;
+  --ls-normal: 0;
+  --ls-wide: 0.05em;
+  --ls-wider: 0.1em;
+  --ls-widest: 0.2em;
+
+  /* Font weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+
+  /* ── SPACING ───────────────────────────────────────────────── */
+
+  --s-xs: 0.25rem;
+  --s-sm: 0.5rem;
+  --s-md: 1rem;
+  --s-lg: 1.5rem;
+  --s-xl: 2rem;
+  --s-2xl: 3rem;
+  --s-3xl: 4rem;
+  --s-4xl: 6rem;
+  --s-5xl: 8rem;
+  --s-section: clamp(4rem, 10vh, 8rem);
+
+
+  /* ── LAYOUT ────────────────────────────────────────────────── */
+
+  --container-max: 1200px;
+  --container-pad: clamp(1.5rem, 4vw, 3rem);
+  --nav-height: 4.5rem;
+  --nav-height-sm: 3.5rem;
+
+
+  /* ── EASING ────────────────────────────────────────────────── */
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+
+  /* ── Z-INDEX LAYERS ────────────────────────────────────────── */
+
+  --z-canvas: 0;
+  --z-content: 1;
+  --z-mobile-menu: 90;
+  --z-nav: 100;
+  --z-cursor: 10000;
+  --z-grain: 9999;
+
+
+  /* ── BORDERS & RADII ───────────────────────────────────────── */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+}

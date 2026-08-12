@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santosh Nagendran — Cloud Engineer &amp; Systems Builder</title>
+  <meta name="description"
+    content="Portfolio of Santosh Nagendran — Computer Science student, aspiring cloud engineer. Builder of monitoring dashboards, railway trackers, and local AI tools.">
+  <meta name="author" content="Santosh Nagendran">
+  <meta name="theme-color" content="#0A0E17">
+  <meta property="og:title" content="Santosh Nagendran — Cloud Engineer &amp; Systems Builder">
+  <meta property="og:description" content="Computer Science student building infrastructure that stays up.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Grain -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollProgress"></div>
+  </div>
+
+  <!-- ═══ HEADER ══════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <a href="#" class="header__logo">
+      SN<span class="header__logo-dot"></span>
+    </a>
+    <nav class="header__nav">
+      <a href="#work" class="header__link">Work</a>
+      <a href="#about" class="header__link">About</a>
+      <a href="#contact" class="header__link">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- ═══ HERO ════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero__content">
+      <h1 class="hero__title">
+        <span class="hero__line hero__line--outline" data-reveal="hero">SANTOSH</span>
+        <span class="hero__line" data-reveal="hero">NAGENDRAN</span>
+      </h1>
+
+      <div class="hero__bottom">
+        <p class="hero__tagline" data-reveal="fade">Third-year CSE. I like uptime.</p>
+        <div class="hero__meta" data-reveal="fade">
+          <span>Cloud Engineer (in progress)</span>
+          <span class="hero__meta-sep">·</span>
+          <span>India</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll" data-reveal="fade">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══ MARQUEE ═════════════════════════════════════════════ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">CLOUD INFRASTRUCTURE</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">SYSTEM MONITORING</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">FULL-STACK</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">DEVOPS</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">AUTOMATION</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">CYBERSECURITY</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">REAL-TIME DASHBOARDS</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">LOCAL AI</span>
+      <span class="marquee__sep">◆</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee__item">CLOUD INFRASTRUCTURE</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">SYSTEM MONITORING</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">FULL-STACK</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">DEVOPS</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">AUTOMATION</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">CYBERSECURITY</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">REAL-TIME DASHBOARDS</span>
+      <span class="marquee__sep">◆</span>
+      <span class="marquee__item">LOCAL AI</span>
+      <span class="marquee__sep">◆</span>
+    </div>
+  </div>
+
+
+  <!-- ═══ ABOUT ═══════════════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <p class="about__text" data-word-reveal>
+        Third-year Computer Science Engineering Diploma student focused on cloud infrastructure,
+        system monitoring, and building tools that solve real operational problems.
+        I build things that track other things — system health dashboards,
+        live railway trackers, and local AI coding assistants. When something can be
+        monitored, automated, or made more reliable, that's where I want to be.
+        Currently levelling up toward cloud engineering with AWS.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══ WORK ════════════════════════════════════════════════ -->
+  <section class="work" id="work">
+    <div class="container">
+      <h2 class="section-heading" data-reveal="slide">Selected Work</h2>
+    </div>
+
+    <!-- DevPulse -->
+    <div class="project" data-animate="project">
+      <div class="project__bg-num" aria-hidden="true">01</div>
+      <div class="container project__grid">
+        <div class="project__info">
+          <span class="project__label">System Dashboard</span>
+          <h3 class="project__name" data-reveal="slide">DevPulse</h3>
+          <p class="project__desc">
+            Real-time system health dashboard — CPU, RAM, Disk, Battery, Network,
+            live process list, 60-second history graphs, browser notifications,
+            dark/light mode, CSV export. Hand-rolled Canvas API graphs, no charting libraries.
+          </p>
+          <div class="project__tags">
+            <span>Python</span><span>Flask</span><span>psutil</span>
+            <span>JavaScript</span><span>Canvas API</span>
+          </div>
+          <div class="project__links">
+            <a href="https://github.com/SantoshNagendran/DevPulse" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              Source
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
+        <div class="project__visual">
+          <div class="project__visual-inner">
+            <div class="project__placeholder">
+              <span class="project__placeholder-label">Screenshot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TrackIN -->
+    <div class="project project--reverse" data-animate="project">
+      <div class="project__bg-num" aria-hidden="true">02</div>
+      <div class="container project__grid">
+        <div class="project__info">
+          <span class="project__label">Railway Live Tracker</span>
+          <h3 class="project__name" data-reveal="slide">TrackIN</h3>
+          <p class="project__desc">
+            Indian railway live tracker with Southern Railway-inspired visual identity.
+            Live train status via RapidAPI, 19,000+ Tamil Nadu track segments rendered on an
+            interactive Leaflet.js map with Turf.js for accurate positioning.
+            Live timeline with delay badges and animated train position indicator.
+          </p>
+          <div class="project__tags">
+            <span>JavaScript</span><span>Leaflet.js</span><span>Turf.js</span>
+            <span>RapidAPI</span><span>OpenStreetMap</span>
+          </div>
+          <div class="project__links">
+            <a href="https://github.com/SantoshNagendran/TrackIN" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              Source
+            </a>
+          </div>
+        </div>
+        <div class="project__visual">
+          <div class="project__visual-inner">
+            <div class="project__placeholder">
+              <span class="project__placeholder-label">Screenshot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CodeMate AI -->
+    <div class="project" data-animate="project">
+      <div class="project__bg-num" aria-hidden="true">03</div>
+      <div class="container project__grid">
+        <div class="project__info">
+          <span class="project__label">Local AI Assistant</span>
+          <h3 class="project__name" data-reveal="slide">CodeMate AI</h3>
+          <p class="project__desc">
+            Local LLM coding assistant built with JavaScript and Ollama.
+            Runs entirely offline — no API keys, no cloud dependency,
+            just a private AI pair programmer on your machine.
+          </p>
+          <div class="project__tags">
+            <span>JavaScript</span><span>Ollama</span><span>LLM</span>
+          </div>
+          <div class="project__links">
+            <a href="https://github.com/SantoshNagendran/CodeMate-AI" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              Source
+            </a>
+          </div>
+        </div>
+        <div class="project__visual">
+          <div class="project__visual-inner">
+            <div class="project__placeholder">
+              <span class="project__placeholder-label">Screenshot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ SKILLS ══════════════════════════════════════════════ -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 class="section-heading" data-reveal="slide">Skills &amp; Stack</h2>
+
+      <div class="skills__grid" data-animate="stagger">
+        <div class="skills__group">
+          <h3 class="skills__group-title">Languages</h3>
+          <div class="skills__tags">
+            <span>Python</span><span>JavaScript</span><span>Java</span>
+            <span>C</span><span>C++</span><span>PHP</span>
+          </div>
+        </div>
+        <div class="skills__group">
+          <h3 class="skills__group-title">Web &amp; Frameworks</h3>
+          <div class="skills__tags">
+            <span>HTML5</span><span>CSS3</span><span>Flask</span><span>MySQL</span>
+          </div>
+        </div>
+        <div class="skills__group">
+          <h3 class="skills__group-title">Tools &amp; Infra</h3>
+          <div class="skills__tags">
+            <span>Git / GitHub</span><span>Linux</span><span>Networking</span>
+            <span>AWS <em>(learning)</em></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="achievements" data-animate="stagger">
+        <div class="achievement">
+          <span class="achievement__badge">2nd Place</span>
+          <h4 class="achievement__title">CyberForge Hackathon — South Zone 1</h4>
+          <p class="achievement__desc">
+            Led a team through cybersecurity challenges at the South Zone 1 Hackathon,
+            conducted by InGage EduTech in collaboration with Naan Mudhalvan.
+          </p>
+        </div>
+        <div class="achievement">
+          <span class="achievement__badge">Certifications</span>
+          <div class="achievement__certs">
+            <span>Claude 101</span><span>Claude Code 101</span>
+            <span>Claude Code in Action</span><span>Cyber Security Essentials</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ CONTACT ═════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="contact__heading">
+        <span class="contact__heading-line" data-reveal="slide">Let's build</span>
+        <span class="contact__heading-line" data-reveal="slide">something.</span>
+      </h2>
+      <p class="contact__sub" data-reveal="fade">
+        Open to internships, collaboration, and interesting projects.
+      </p>
+      <div class="contact__links" data-reveal="fade">
+        <a href="https://github.com/SantoshNagendran" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/santosh-nagendran" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/santosh.mdu" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>&copy; 2026 Santosh Nagendran</span>
+      <span>Built from scratch</span>
+    </div>
+  </footer>
+
+
+  <!-- ═══ SCRIPTS ═════════════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/particles.js" defer></script>
+  <script src="js/app.js" defer></script>
+
+</body>
+
+</html>
