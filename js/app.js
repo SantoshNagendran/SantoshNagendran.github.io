@@ -18,6 +18,9 @@
     initHeroAnimations();
     initScrollReveals();
     initCertSlider();
+    
+    // Secret route clue for curious explorers
+    console.log('%c[DESTINATION_NODE] 31.9505° S, 115.8605° E -> /perth.html', 'color: #22d3a7; font-family: "IBM Plex Mono", monospace; font-size: 11px; background: #131825; padding: 4px 8px; border: 1px solid #1E293B; border-radius: 4px;');
   }
 
   /* ── 1. Smooth Scroll (Lenis) ───────────────────────────── */

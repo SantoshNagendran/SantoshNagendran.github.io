@@ -20,9 +20,9 @@ class ParticleNetwork {
 
     this.config = {
       particleCount: this._getCount(),
-      connectionDistance: 100,
-      particleSpeed: 0.8,
-      mouseInfluence: 0.06,
+      connectionDistance: 135,
+      particleSpeed: 1.25,
+      mouseInfluence: 0.08,
       colors: {
         particle: { r: 34, g: 211, b: 167 },  // accent green
         connection: { r: 56, g: 189, b: 248 },  // accent cyan
@@ -38,9 +38,9 @@ class ParticleNetwork {
 
   _getCount() {
     const w = window.innerWidth;
-    if (w < 768) return 0;   // skip on mobile entirely
-    if (w < 1200) return 40;
-    return 70;
+    if (w < 768) return 45;
+    if (w < 1200) return 95;
+    return 150;
   }
 
   _init() {
