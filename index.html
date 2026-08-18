@@ -10,14 +10,15 @@
   <meta name="author" content="Santosh Nagendran">
   <meta name="theme-color" content="#0A0E17">
   <meta property="og:title" content="Santosh Nagendran — CS Student &amp; Aspiring Cloud Engineer">
-  <meta property="og:description" content="Computer Science student learning cloud infrastructure and building systems.">
+  <meta property="og:description"
+    content="Computer Science student learning cloud infrastructure and building systems.">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
     rel="stylesheet">
 
   <!-- Styles -->
@@ -26,6 +27,23 @@
 </head>
 
 <body>
+
+  <!-- Techy Anime.js Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__terminal">
+        <span class="preloader__prompt">&gt;</span> <span class="preloader__cmd" id="preloaderCmd">INITIALIZING CORE
+          SYSTEMS...</span>
+      </div>
+      <div class="preloader__bar-wrap">
+        <div class="preloader__bar" id="preloaderBar"></div>
+      </div>
+      <div class="preloader__meta">
+        <span class="preloader__status" id="preloaderStatus">NODE // CONNECTING</span>
+        <span class="preloader__percent" id="preloaderPercent">000%</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Grain -->
   <div class="grain" aria-hidden="true"></div>
@@ -282,21 +300,83 @@
         </div>
       </div>
 
-      <!-- Achievements -->
-      <div class="achievements" data-animate="stagger">
-        <div class="achievement">
-          <span class="achievement__badge">2nd Place</span>
-          <h4 class="achievement__title">CyberForge Hackathon — South Zone 1</h4>
-          <p class="achievement__desc">
-            Led a team through cybersecurity challenges at the South Zone 1 Hackathon,
-            conducted by InGage EduTech in collaboration with Naan Mudhalvan.
-          </p>
+      <!-- Certifications & Achievements Slider -->
+      <div class="cert-slider" data-animate="stagger">
+        <div class="cert-slider__header">
+          <h3 class="cert-slider__title">Certifications &amp; Achievements</h3>
+          <div class="cert-slider__controls">
+            <button class="cert-slider__btn cert-slider__btn--prev" id="certPrev" aria-label="Previous certificate">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <span class="cert-slider__counter" id="certCounter">01 / 05</span>
+            <button class="cert-slider__btn cert-slider__btn--next" id="certNext" aria-label="Next certificate">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="achievement">
-          <span class="achievement__badge">Certifications</span>
-          <div class="achievement__certs">
-            <span>Claude 101</span><span>Claude Code 101</span>
-            <span>Claude Code in Action</span><span>Cyber Security Essentials</span>
+
+        <div class="cert-slider__viewport" id="certViewport">
+          <div class="cert-slider__track" id="certTrack">
+
+            <div class="cert-card cert-card--highlight">
+              <div class="cert-card__top">
+                <span class="cert-card__badge">2nd Place</span>
+                <span class="cert-card__issuer">InGage &amp; Naan Mudhalvan</span>
+              </div>
+              <h4 class="cert-card__name">CyberForge Hackathon — South Zone 1</h4>
+              <p class="cert-card__desc">Led a team through cybersecurity challenges &amp; vulnerability analysis under
+                high pressure.</p>
+              <span class="cert-card__date">2024</span>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-card__top">
+                <span class="cert-card__badge cert-card__badge--cert">Certificate</span>
+                <span class="cert-card__issuer">Anthropic</span>
+              </div>
+              <h4 class="cert-card__name">Claude 101</h4>
+              <p class="cert-card__desc">Foundational principles of prompt engineering, model capabilities, and Claude
+                architecture.</p>
+              <span class="cert-card__date">2024</span>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-card__top">
+                <span class="cert-card__badge cert-card__badge--cert">Certificate</span>
+                <span class="cert-card__issuer">Anthropic</span>
+              </div>
+              <h4 class="cert-card__name">Claude Code 101</h4>
+              <p class="cert-card__desc">AI-assisted engineering fundamentals, codebase navigation, and workflow
+                execution.</p>
+              <span class="cert-card__date">2024</span>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-card__top">
+                <span class="cert-card__badge cert-card__badge--cert">Certificate</span>
+                <span class="cert-card__issuer">Anthropic</span>
+              </div>
+              <h4 class="cert-card__name">Claude Code in Action</h4>
+              <p class="cert-card__desc">Advanced agentic coding workflows, refactoring strategies, and autonomous task
+                resolution.</p>
+              <span class="cert-card__date">2024</span>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-card__top">
+                <span class="cert-card__badge cert-card__badge--cert">Certificate</span>
+                <span class="cert-card__issuer">Cisco / Cyber Academy</span>
+              </div>
+              <h4 class="cert-card__name">Cyber Security Essentials</h4>
+              <p class="cert-card__desc">Network security fundamentals, threat vectors, encryption principles, and
+                defense mechanisms.</p>
+              <span class="cert-card__date">2024</span>
+            </div>
+
           </div>
         </div>
       </div>
@@ -326,7 +406,8 @@
   <!-- ═══ FOOTER ══════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container footer__inner">
-      <span>&copy; 2026 Santosh Nagendran<a href="perth.html" class="secret-link secret-link--faint" title="Perth, Western Australia" aria-label="Secret destination">.</a></span>
+      <span>&copy; 2026 Santosh Nagendran<a href="perth.html" class="secret-link secret-link--faint"
+          title="Perth, Western Australia" aria-label="Secret destination">.</a></span>
       <span>Built from scratch</span>
     </div>
   </footer>
@@ -341,3 +422,5 @@
 </body>
 
 </html>
+
+<!--what are you looking at? ^_^ If you see this, dm me on instagram or linkedin! :)-->

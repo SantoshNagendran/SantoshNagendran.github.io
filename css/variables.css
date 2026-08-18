@@ -18,20 +18,22 @@
   --c-text-muted: #71717A;
   --c-text-faint: #52525B;
 
-  /* Accents */
-  --c-accent-green: #10B981;
-  --c-accent-emerald: #10B981;
-  --c-accent-amber: #F59E0B;
+  /* Accents - Warm Vibrant Orange */
+  --c-accent-orange: #FF7700;
+  --c-accent-green: #FF7700;
+  --c-accent-emerald: #FF7700;
+  --c-accent-amber: #FF9E00;
 
   /* Borders */
   --c-border: #1E222D;
   --c-border-light: #2A303F;
-  --c-border-focus: #10B981;
+  --c-border-focus: #FF7700;
 
 
   /* ── TYPOGRAPHY ────────────────────────────────────────────── */
-
-  --f-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-hero: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --f-mono: 'IBM Plex Mono', 'Fira Code', 'Cascadia Code', monospace;
 
   /* Type scale — ~1.25 modular ratio */

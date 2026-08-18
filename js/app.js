@@ -15,7 +15,7 @@
     splitHeroText();
     splitSlideHeadings();
     splitAboutWords();
-    initHeroAnimations();
+    initPreloader();
     initScrollReveals();
     initCertSlider();
     initSecretEasterEggs();
@@ -25,7 +25,7 @@
       console.log('✈ Connecting to Western Australia node...');
       window.location.href = 'perth.html';
     };
-    console.log('%c[SYS] Hint: Type "perth" anywhere or run perth() in console.', 'color: #22d3a7; font-family: "IBM Plex Mono", monospace; font-size: 11px; background: #131825; padding: 4px 8px; border: 1px solid #1E293B; border-radius: 4px;');
+    console.log('%c[SYS] Hint: Type "perth" anywhere or run perth() in console.', 'color: #FF7700; font-family: "IBM Plex Mono", monospace; font-size: 11px; background: #0F1218; padding: 4px 8px; border: 1px solid #1E222D; border-radius: 4px;');
   }
 
   /* ── 1. Smooth Scroll (Lenis) ───────────────────────────── */
@@ -112,7 +112,73 @@
     }).join(' ');
   }
 
-  /* ── 4. Hero Entrance (Anime.js) ───────────────────────── */
+  /* ── 4. Tech Preloader & Hero Entrance (Anime.js) ──────── */
+
+  function initPreloader() {
+    var preloader = document.getElementById('preloader');
+    var bar = document.getElementById('preloaderBar');
+    var percent = document.getElementById('preloaderPercent');
+    var cmd = document.getElementById('preloaderCmd');
+    var status = document.getElementById('preloaderStatus');
+
+    if (!preloader || typeof anime === 'undefined') {
+      if (preloader) preloader.style.display = 'none';
+      initHeroAnimations();
+      return;
+    }
+
+    var progressObj = { value: 0 };
+    var commands = [
+      'INITIALIZING CORE SYSTEMS...',
+      'ESTABLISHING TELEMETRY PIPELINE...',
+      'STARTING DAEMON & MESH TOPOLOGY...',
+      'SYSTEM READY.'
+    ];
+
+    var preloaderTL = anime.timeline({
+      easing: 'easeInOutQuad',
+      complete: function() {
+        anime({
+          targets: preloader,
+          opacity: [1, 0],
+          duration: 450,
+          easing: 'easeOutQuad',
+          complete: function() {
+            preloader.style.display = 'none';
+            initHeroAnimations();
+          }
+        });
+      }
+    });
+
+    // Animate progress percentage and progress bar
+    preloaderTL.add({
+      targets: progressObj,
+      value: 100,
+      round: 1,
+      duration: 1400,
+      easing: 'cubicBezier(0.25, 1, 0.5, 1)',
+      update: function() {
+        var val = progressObj.value;
+        var formatted = String(Math.floor(val)).padStart(3, '0') + '%';
+        if (percent) percent.textContent = formatted;
+        if (bar) bar.style.width = val + '%';
+
+        if (cmd) {
+          if (val < 30) cmd.textContent = commands[0];
+          else if (val < 65) cmd.textContent = commands[1];
+          else if (val < 90) cmd.textContent = commands[2];
+          else cmd.textContent = commands[3];
+        }
+
+        if (status) {
+          if (val < 60) status.textContent = 'NODE // CONNECTING';
+          else if (val < 95) status.textContent = 'TOPOLOGY // ACTIVE';
+          else status.textContent = 'STATUS // 200 OK';
+        }
+      }
+    });
+  }
 
   function initHeroAnimations() {
     if (typeof anime === 'undefined') return;
@@ -127,7 +193,7 @@
       translateY: ['110%', '0%'],
       opacity: [0, 1],
       duration: 1100,
-      delay: anime.stagger(35, { start: 200 })
+      delay: anime.stagger(35, { start: 100 })
     })
     // Tagline & meta reveal
     .add({
@@ -448,7 +514,7 @@
     function triggerPortal() {
       // High-tech transition toast
       var toast = document.createElement('div');
-      toast.style.cssText = 'position:fixed;bottom:2rem;right:2rem;background:#0A0E17;border:1px solid #22D3A7;color:#22D3A7;padding:12px 20px;border-radius:6px;font-family:"IBM Plex Mono",monospace;font-size:12px;z-index:99999;box-shadow:0 10px 30px rgba(0,0,0,0.8);letter-spacing:0.05em;animation:fadeIn 0.3s ease;';
+      toast.style.cssText = 'position:fixed;bottom:2rem;right:2rem;background:#08090D;border:1px solid #FF7700;color:#FF7700;padding:12px 20px;border-radius:6px;font-family:"IBM Plex Mono",monospace;font-size:12px;z-index:99999;box-shadow:0 10px 30px rgba(0,0,0,0.8);letter-spacing:0.05em;animation:fadeIn 0.3s ease;';
       toast.innerHTML = '✈ Connecting to Perth, WA node...';
       document.body.appendChild(toast);
 

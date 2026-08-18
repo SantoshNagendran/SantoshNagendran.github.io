@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/variables.css">
@@ -24,9 +24,9 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       width: 100%;
-      min-height: 100%;
+      min-height: 100vh;
       background: #07090E;
       font-family: var(--f-mono);
       color: #D1D5DB;
@@ -34,13 +34,15 @@
       overflow-x: hidden;
     }
 
+    /* Full Background Shader */
     #shader-container {
       position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       z-index: 1;
-      opacity: 0.55;
+      opacity: 0.45;
       pointer-events: none;
     }
 
@@ -49,21 +51,31 @@
       inset: 0;
       z-index: 2;
       pointer-events: none;
-      opacity: 0.04;
+      opacity: 0.035;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       background-repeat: repeat;
       background-size: 128px;
     }
 
-    .page-wrap {
+    /* Center Wrapper */
+    .page-viewport {
       position: relative;
       z-index: 10;
-      max-width: 780px;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: clamp(2rem, 5vw, 4.5rem) 1.25rem;
+    }
+
+    .page-wrap {
+      width: 100%;
+      max-width: 740px;
       margin: 0 auto;
-      padding: clamp(2rem, 6vw, 5rem) clamp(1.25rem, 4vw, 2.5rem);
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 2.5rem;
     }
 
     /* Top Nav */
@@ -71,9 +83,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       font-size: 0.8rem;
+      width: 100%;
     }
 
     .nav-back {
@@ -86,37 +99,38 @@
     }
 
     .nav-back:hover {
-      color: #FFFFFF;
+      color: #FF7700;
     }
 
     .perth-clock {
-      color: #6B7280;
+      color: #71717A;
       font-feature-settings: "tnum";
     }
 
     .perth-clock span {
-      color: #22D3A7;
+      color: #FF7700;
+      font-weight: 500;
     }
 
-    /* Secret Header */
+    /* Header */
     .note-header {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.6rem;
     }
 
     .note-tag {
-      font-size: 0.75rem;
-      color: #22D3A7;
+      font-size: 0.72rem;
+      color: #FF7700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
     .note-title {
       font-family: var(--f-display);
-      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-size: clamp(2rem, 4.5vw, 3rem);
       font-weight: 700;
-      color: #F3F4F6;
+      color: #F4F4F5;
       line-height: 1.15;
       letter-spacing: -0.02em;
     }
@@ -127,7 +141,7 @@
       flex-direction: column;
       gap: 1.5rem;
       font-size: 0.95rem;
-      color: #9CA3AF;
+      color: #A1A1AA;
     }
 
     .note-body p {
@@ -135,24 +149,26 @@
     }
 
     .note-body strong {
-      color: #F3F4F6;
+      color: #F4F4F5;
       font-weight: 600;
     }
 
     .quote-box {
-      border-left: 2px solid #22D3A7;
-      padding-left: 1.25rem;
-      margin: 0.5rem 0;
-      color: #E5E7EB;
+      border-left: 2px solid #FF7700;
+      padding: 0.75rem 1.25rem;
+      background: rgba(255, 119, 0, 0.03);
+      color: #F4F4F5;
       font-size: 1.05rem;
       font-family: var(--f-display);
+      border-radius: 0 4px 4px 0;
     }
 
     /* Direct Perth Callout */
     .perth-callout {
-      background: rgba(19, 24, 37, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
+      background: #0F1218;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 3px solid #FF7700;
+      border-radius: 6px;
       padding: 1.75rem;
       display: flex;
       flex-direction: column;
@@ -161,8 +177,8 @@
 
     .perth-callout h3 {
       font-family: var(--f-display);
-      font-size: 1.25rem;
-      color: #F3F4F6;
+      font-size: 1.2rem;
+      color: #F4F4F5;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -170,15 +186,15 @@
 
     .perth-callout p {
       font-size: 0.88rem;
-      color: #9CA3AF;
-      line-height: 1.6;
+      color: #A1A1AA;
+      line-height: 1.65;
     }
 
     .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 0.5rem;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
     }
 
     .contact-btn {
@@ -186,19 +202,19 @@
       align-items: center;
       gap: 8px;
       font-size: 0.82rem;
-      color: #F3F4F6;
+      color: #F4F4F5;
       text-decoration: none;
       padding: 8px 16px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 4px;
       transition: all 0.2s ease;
     }
 
     .contact-btn:hover {
-      background: #22D3A7;
+      background: #FF7700;
       color: #07090E;
-      border-color: #22D3A7;
+      border-color: #FF7700;
       font-weight: 500;
     }
 
@@ -210,7 +226,7 @@
     /* What I'm Doing Checklist */
     .focus-list {
       display: grid;
-      gap: 0.75rem;
+      gap: 0.65rem;
       margin-top: 0.5rem;
     }
 
@@ -219,12 +235,12 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 0.88rem;
-      color: #9CA3AF;
+      color: #A1A1AA;
     }
 
     .focus-item::before {
       content: '→';
-      color: #22D3A7;
+      color: #FF7700;
       font-weight: bold;
     }
 
@@ -233,21 +249,22 @@
       padding-top: 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       font-size: 0.75rem;
-      color: #4B5563;
+      color: #52525B;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      width: 100%;
     }
 
     .page-footer a {
-      color: #6B7280;
+      color: #71717A;
       text-decoration: none;
     }
 
     .page-footer a:hover {
-      color: #9CA3AF;
+      color: #A1A1AA;
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -258,103 +275,88 @@
   <div class="grain" aria-hidden="true"></div>
   <div id="shader-container"></div>
 
-  <main class="page-wrap">
-    <!-- Navigation -->
-    <div class="nav-bar">
-      <a href="index.html" class="nav-back">
-        ← santoshnagendran.github.io
-      </a>
-<<<<<<< HEAD
-      <div class="perth-clock" id="perthClock">
-        Perth (AWST): <span>--:--:--</span>
-=======
-      <div class="coord-badge">31.9505° S, 115.8605° E · PERTH, WA</div>
-    </div>
-
-    <div class="center-content">
-      <div class="tag-mission">North Star // Long-Term Vision</div>
-      <h1 class="goal-heading">My life's goal is to get a job in <span>Perth, Australia</span>.</h1>
-      <p class="goal-subtext">
-        Every project, every certification, every system architecture diagram, and every line of infrastructure-as-code is built with one relentless target in mind: earning a role as a Cloud Engineer in Western Australia.
-      </p>
-      <div class="perth-metrics">
-        <span class="metric-pill"> Western Australia</span>
-        <span class="metric-pill"> Cloud Infrastructure</span>
-        <span class="metric-pill"> DevOps &amp; Reliability</span>
-        <span class="metric-pill"> Relocation Goal</span>
->>>>>>> 40e3665f7ae690029ef0008c9108f4f05c870207
-      </div>
-    </div>
-
-    <!-- Header -->
-    <header class="note-header">
-      <span class="note-tag">Personal Goal // 31.9505° S, 115.8605° E</span>
-      <h1 class="note-title">Why Perth, Australia?</h1>
-    </header>
-
-    <!-- Main Message -->
-    <article class="note-body">
-      <div class="quote-box">
-        "My life's goal is to land a job and build my engineering career in Perth, Western Australia."
+  <div class="page-viewport">
+    <main class="page-wrap">
+      <!-- Navigation -->
+      <div class="nav-bar">
+        <a href="index.html" class="nav-back">
+          ← santoshnagendran.github.io
+        </a>
+        <div class="perth-clock" id="perthClock">
+          Perth (AWST): <span>--:--:--</span>
+        </div>
       </div>
 
-      <p>
-        I'm Santosh, currently in my 3rd year of Computer Science Engineering in India. 
-        Most people keep their goals broad or vague, but I believe in having a clear direction. 
-        For me, that direction is Perth.
-      </p>
+      <!-- Header -->
+      <header class="note-header">
+        <span class="note-tag">Personal Goal // 31.9505° S, 115.8605° E</span>
+        <h1 class="note-title">Why Perth, Australia?</h1>
+      </header>
 
-      <p>
-        Western Australia's growing tech and resource ecosystem, focus on high-reliability cloud systems, 
-        and balanced life by the coast make it the exact place where I want to work, grow, and contribute 
-        as a cloud and systems engineer.
-      </p>
+      <!-- Main Message -->
+      <article class="note-body">
+        <div class="quote-box">
+          "My life's goal is to land a job and build my engineering career in Perth, Western Australia."
+        </div>
 
-      <p>
-        I know that getting hired abroad as a junior/graduate isn't easy. That's why I'm spending every spare hour 
-        building real systems (like <a href="https://github.com/SantoshNagendran/DevPulse" target="_blank" style="color: #22D3A7; text-decoration: underline;">DevPulse</a> and <a href="https://github.com/SantoshNagendran/TrackIN" target="_blank" style="color: #22D3A7; text-decoration: underline;">TrackIN</a>), learning AWS architecture hands-on, writing clean code, and pushing code daily.
-      </p>
-
-      <!-- If You're From Perth Box -->
-      <div class="perth-callout">
-        <h3>Are you from Perth or Western Australia?</h3>
         <p>
-          If you're an engineer, hiring manager, tech founder, or someone working in WA tech who stumbled onto this hidden page — <strong>I would genuinely love your advice</strong>. 
-          Even a 5-minute pointer on what skills the local WA market values most, visa pathways for tech grads, or feedback on my projects would mean the world to me.
+          I'm Santosh, currently in my 3rd year of Computer Science Engineering in India. 
+          Most people keep their goals broad or vague, but I believe in having a clear direction. 
+          For me, that direction is Perth.
         </p>
-        <div class="contact-row">
-          <a href="https://linkedin.com/in/santosh-nagendran" target="_blank" rel="noopener noreferrer" class="contact-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            Connect on LinkedIn
-          </a>
-          <a href="https://github.com/SantoshNagendran" target="_blank" rel="noopener noreferrer" class="contact-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            Review my GitHub
-          </a>
-          <a href="https://www.instagram.com/santosh.mdu" target="_blank" rel="noopener noreferrer" class="contact-btn">
-            Instagram DM
-          </a>
-        </div>
-      </div>
 
-      <!-- Preparation Track -->
-      <div>
-        <p style="margin-bottom: 0.5rem;"><strong>What I'm doing to get ready:</strong></p>
-        <div class="focus-list">
-          <div class="focus-item">Completing AWS Cloud Practitioner and Solutions Architect fundamentals</div>
-          <div class="focus-item">Building production-style backend APIs &amp; live telemetry dashboards</div>
-          <div class="focus-item">Practicing Linux administration, containerization, and networking protocols</div>
-          <div class="focus-item">Contributing to open-source projects and studying cloud cost optimization</div>
-        </div>
-      </div>
-    </article>
+        <p>
+          Western Australia's growing tech and resource ecosystem, focus on high-reliability cloud systems, 
+          and balanced life by the coast make it the exact place where I want to work, grow, and contribute 
+          as a cloud and systems engineer.
+        </p>
 
-    <!-- Footer -->
-    <footer class="page-footer">
-      <span>Santosh Nagendran · CSE Student</span>
-      <span>Target City: Perth, WA (UTC+8)</span>
-    </footer>
-  </main>
+        <p>
+          I know that getting hired abroad as a junior/graduate isn't easy. That's why I'm spending every spare hour 
+          building real systems (like <a href="https://github.com/SantoshNagendran/DevPulse" target="_blank" style="color: #FF7700; text-decoration: underline;">DevPulse</a> and <a href="https://github.com/SantoshNagendran/TrackIN" target="_blank" style="color: #FF7700; text-decoration: underline;">TrackIN</a>), learning AWS architecture hands-on, writing clean code, and pushing code daily.
+        </p>
+
+        <!-- If You're From Perth Box -->
+        <div class="perth-callout">
+          <h3>Are you from Perth or Western Australia?</h3>
+          <p>
+            If you're an engineer, hiring manager, tech founder, or someone working in WA tech who stumbled onto this hidden page — <strong>I would genuinely love your advice</strong>. 
+            Even a 5-minute pointer on what skills the local WA market values most, visa pathways for tech grads, or feedback on my projects would mean the world to me.
+          </p>
+          <div class="contact-row">
+            <a href="https://linkedin.com/in/santosh-nagendran" target="_blank" rel="noopener noreferrer" class="contact-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              Connect on LinkedIn
+            </a>
+            <a href="https://github.com/SantoshNagendran" target="_blank" rel="noopener noreferrer" class="contact-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              Review my GitHub
+            </a>
+            <a href="https://www.instagram.com/santosh.mdu" target="_blank" rel="noopener noreferrer" class="contact-btn">
+              Instagram DM
+            </a>
+          </div>
+        </div>
+
+        <!-- Preparation Track -->
+        <div>
+          <p style="margin-bottom: 0.5rem;"><strong>What I'm doing to get ready:</strong></p>
+          <div class="focus-list">
+            <div class="focus-item">Completing AWS Cloud Practitioner and Solutions Architect fundamentals</div>
+            <div class="focus-item">Building production-style backend APIs &amp; live telemetry dashboards</div>
+            <div class="focus-item">Practicing Linux administration, containerization, and networking protocols</div>
+            <div class="focus-item">Contributing to open-source projects and studying cloud cost optimization</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Footer -->
+      <footer class="page-footer">
+        <span>Santosh Nagendran · CSE Student</span>
+        <span>Target City: Perth, WA (UTC+8)</span>
+      </footer>
+    </main>
+  </div>
 
   <script>
     // Live Perth Clock (AWST: UTC+8)
@@ -445,9 +447,9 @@
               v = p + cos(i * i + (iTime + p.x * 0.08) * 0.025 + i * vec2(13.0, 11.0)) * 3.5 + vec2(sin(iTime * 3.0 + i) * 0.003, cos(iTime * 3.5 - i) * 0.003);
               float tailNoise = fbm(v + vec2(iTime * 0.5, i)) * 0.3 * (1.0 - (i / 35.0));
               vec4 auroraColors = vec4(
-                0.08 + 0.25 * sin(i * 0.2 + iTime * 0.4),
-                0.25 + 0.45 * cos(i * 0.3 + iTime * 0.5),
-                0.6 + 0.3 * sin(i * 0.4 + iTime * 0.3),
+                0.15 + 0.25 * sin(i * 0.2 + iTime * 0.4),
+                0.20 + 0.35 * cos(i * 0.3 + iTime * 0.5),
+                0.55 + 0.3 * sin(i * 0.4 + iTime * 0.3),
                 1.0
               );
               vec4 currentContribution = auroraColors * exp(sin(i * i + iTime * 0.8)) / length(max(v, vec2(v.x * f * 0.015, v.y * 1.5)));

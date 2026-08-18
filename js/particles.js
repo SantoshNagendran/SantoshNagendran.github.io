@@ -12,7 +12,7 @@ class ParticleNetwork {
     this.ctx = this.canvas.getContext('2d');
     this.particles = [];
     this.mouse = { x: null, y: null, radius: 180 };
-    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.dpr = Math.min(window.devicePixelRatio || 4, 2);
     this.animationId = null;
     this.isVisible = true;
     this.width = 0;
@@ -20,12 +20,12 @@ class ParticleNetwork {
 
     this.config = {
       particleCount: this._getCount(),
-      connectionDistance: 135,
-      particleSpeed: 1.25,
-      mouseInfluence: 0.08,
+      connectionDistance: 110,
+      particleSpeed: 0.9,
+      mouseInfluence: 0.06,
       colors: {
-        particle: { r: 228, g: 228, b: 231 },   // clean zinc/silver starlight
-        connection: { r: 148, g: 163, b: 184 }, // subtle cool slate line
+        particle: { r: 255, g: 119, b: 0 },
+        connection: { r: 255, g: 158, b: 0 },
       }
     };
 
@@ -38,9 +38,9 @@ class ParticleNetwork {
 
   _getCount() {
     const w = window.innerWidth;
-    if (w < 768) return 45;
-    if (w < 1200) return 95;
-    return 150;
+    if (w < 768) return 25;
+    if (w < 1200) return 50;
+    return 75;
   }
 
   _init() {
@@ -233,4 +233,4 @@ class ParticleNetwork {
 }
 
 
-/* Hello mr.hacker man! what are you looking for? */
+/* Hello mr.hacker man! what are you looking for lol? */
