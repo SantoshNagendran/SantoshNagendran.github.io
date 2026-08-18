@@ -4,29 +4,29 @@
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ── COLOR SYSTEM ──────────────────────────────────────────── */
+  /* ── COLOR SYSTEM (Non-AI, Authentic High-End Engineering Palette) ── */
 
   /* Backgrounds */
-  --c-bg-deep: #0A0E17;
-  --c-bg-surface: #131825;
-  --c-bg-elevated: #1A2035;
-  --c-bg-hover: #1E2642;
+  --c-bg-deep: #08090D;
+  --c-bg-surface: #0F1218;
+  --c-bg-elevated: #151922;
+  --c-bg-hover: #1C222E;
 
   /* Text */
-  --c-text-primary: #E2E8F0;
-  --c-text-secondary: #94A3B8;
-  --c-text-muted: #64748B;
-  --c-text-faint: #475569;
+  --c-text-primary: #F4F4F5;
+  --c-text-secondary: #A1A1AA;
+  --c-text-muted: #71717A;
+  --c-text-faint: #52525B;
 
   /* Accents */
-  --c-accent-green: #22D3A7;
-  --c-accent-cyan: #38BDF8;
+  --c-accent-green: #10B981;
+  --c-accent-emerald: #10B981;
   --c-accent-amber: #F59E0B;
 
   /* Borders */
-  --c-border: #1E293B;
-  --c-border-light: #2D3A4F;
-  --c-border-focus: #22D3A7;
+  --c-border: #1E222D;
+  --c-border-light: #2A303F;
+  --c-border-focus: #10B981;
 
 
   /* ── TYPOGRAPHY ────────────────────────────────────────────── */

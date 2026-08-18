@@ -18,9 +18,14 @@
     initHeroAnimations();
     initScrollReveals();
     initCertSlider();
+    initSecretEasterEggs();
     
-    // Secret route clue for curious explorers
-    console.log('%c[DESTINATION_NODE] 31.9505° S, 115.8605° E -> /perth.html', 'color: #22d3a7; font-family: "IBM Plex Mono", monospace; font-size: 11px; background: #131825; padding: 4px 8px; border: 1px solid #1E293B; border-radius: 4px;');
+    // Secret route clue & command for developers
+    window.perth = function() {
+      console.log('✈ Connecting to Western Australia node...');
+      window.location.href = 'perth.html';
+    };
+    console.log('%c[SYS] Hint: Type "perth" anywhere or run perth() in console.', 'color: #22d3a7; font-family: "IBM Plex Mono", monospace; font-size: 11px; background: #131825; padding: 4px 8px; border: 1px solid #1E293B; border-radius: 4px;');
   }
 
   /* ── 1. Smooth Scroll (Lenis) ───────────────────────────── */
@@ -400,6 +405,57 @@
     });
 
     updateSlider();
+  }
+
+  /* ── 7. Secret Easter Egg Entry Modes ──────────────────── */
+
+  function initSecretEasterEggs() {
+    // A. Keyboard sequence listener ("perth")
+    var targetSequence = 'perth';
+    var typed = '';
+    var timer;
+
+    window.addEventListener('keydown', function (e) {
+      // Ignore if user is inside an input/textarea if any
+      if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+      typed += e.key.toLowerCase();
+      clearTimeout(timer);
+      timer = setTimeout(function () { typed = ''; }, 2500);
+
+      if (typed.endsWith(targetSequence)) {
+        triggerPortal();
+      }
+    });
+
+    // B. Triple click on logo
+    var logo = document.querySelector('.header__logo');
+    if (logo) {
+      var clickCount = 0;
+      var clickTimer;
+      logo.addEventListener('click', function (e) {
+        clickCount++;
+        clearTimeout(clickTimer);
+        clickTimer = setTimeout(function () { clickCount = 0; }, 600);
+
+        if (clickCount >= 3) {
+          e.preventDefault();
+          triggerPortal();
+        }
+      });
+    }
+
+    function triggerPortal() {
+      // High-tech transition toast
+      var toast = document.createElement('div');
+      toast.style.cssText = 'position:fixed;bottom:2rem;right:2rem;background:#0A0E17;border:1px solid #22D3A7;color:#22D3A7;padding:12px 20px;border-radius:6px;font-family:"IBM Plex Mono",monospace;font-size:12px;z-index:99999;box-shadow:0 10px 30px rgba(0,0,0,0.8);letter-spacing:0.05em;animation:fadeIn 0.3s ease;';
+      toast.innerHTML = '✈ Connecting to Perth, WA node...';
+      document.body.appendChild(toast);
+
+      setTimeout(function () {
+        window.location.href = 'perth.html';
+      }, 700);
+    }
   }
 
   // Boot

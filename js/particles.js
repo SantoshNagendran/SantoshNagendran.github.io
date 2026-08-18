@@ -24,8 +24,8 @@ class ParticleNetwork {
       particleSpeed: 1.25,
       mouseInfluence: 0.08,
       colors: {
-        particle: { r: 34, g: 211, b: 167 },  // accent green
-        connection: { r: 56, g: 189, b: 248 },  // accent cyan
+        particle: { r: 228, g: 228, b: 231 },   // clean zinc/silver starlight
+        connection: { r: 148, g: 163, b: 184 }, // subtle cool slate line
       }
     };
 
